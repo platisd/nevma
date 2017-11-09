@@ -7,8 +7,8 @@ const unsigned short GESTURE_INT_PIN = 1;
 volatile boolean hasMovement = false;
 
 /**
- * The main business logic. Translates gestures to keyboard events.
- */
+   The main business logic. Translates gestures to keyboard events.
+*/
 void handleGesture() {
   if (gestureSensor.isGestureAvailable()) {
     switch (gestureSensor.readGesture()) {
@@ -25,7 +25,7 @@ void handleGesture() {
         Keyboard.press(KEY_DOWN_ARROW);
         break;
       case DIR_NEAR:
-        Keyboard.press(KEY_F5);
+        Keyboard.press(KEY_RETURN);
         break;
       case DIR_FAR:
         Keyboard.press(KEY_ESC);
@@ -38,22 +38,30 @@ void handleGesture() {
 }
 
 /**
- * Gets called whenever the gesture module signals there are new data to be sent
- */
+   Gets called whenever the gesture module signals there are new data to be sent
+*/
 void transmissionReady() {
   hasMovement = true;
+}
+
+/**
+   Initializes gesture sensor
+  @return whether gesture sensor initialization was successful
+*/
+boolean initializeGestureSensor() {
+  return gestureSensor.init() && gestureSensor.enableGestureSensor(true);
 }
 
 void setup() {
   Keyboard.begin();
   attachInterrupt(digitalPinToInterrupt(GESTURE_INT_PIN), transmissionReady, FALLING);
-  bool initializationSuccessful = gestureSensor.init() && gestureSensor.enableGestureSensor(true);
+  boolean initializationSuccessful = initializeGestureSensor();
   // If ADPS sensor failed to initialize, block and send error messages via Serial
   if (!initializationSuccessful) {
     Serial.begin(9600);
-    while(!initializationSuccessful) {
-        Serial.println("Error while initializing the gesture sensor");
-        delay(10000);
+    while (!initializationSuccessful) {
+      Serial.println("Error while initializing the gesture sensor");
+      delay(10000);
     }
   }
 }
@@ -62,5 +70,7 @@ void loop() {
   if (hasMovement) {
     handleGesture();
     hasMovement = false;
+    // Reinitialize as workaround for sensor hanging when gesturing too fast
+    initializeGestureSensor();
   }
 }
