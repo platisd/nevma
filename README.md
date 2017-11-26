@@ -11,6 +11,7 @@ Nevma can by default recognize a plethora of gestures; swipe left, right, up, do
 
 ## Components
 * [Nevma board PCB](https://www.pcbway.com/project/shareproject/Nevma__Gesture_control_for_the_masses.html)
+* [3D printed case](https://www.tinkercad.com/things/h5ymCb1lX3J)
 * [Mini SS Micro ATMEGA32U4](https://www.aliexpress.com/item/New-Arrival-Mini-SS-Micro-ATMEGA32U4-Pro-Micro-Module-Board-Compatible-For-Arduino/32777411276.html)
 * [APDS-9960 module](https://www.aliexpress.com/item/GY-9960LLC-APDS-9960-RGB-and-Gesture-Sensor-Module-I2C-Breakout-for-Arduino/32746930049.html)
 
