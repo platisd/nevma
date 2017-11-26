@@ -10,7 +10,7 @@ Nevma implements two basic functions. Gesture recognition and keyboard and mouse
 Nevma can by default recognize a plethora of gestures; swipe left, right, up, down, and moving the hand closer or further from the sensor, using the [APDS-9960 library](https://github.com/sparkfun/SparkFun_APDS-9960_Sensor_Arduino_Library) by Sparkfun.
 
 ## Components
-* Nevma board PCB
+* [Nevma board PCB](https://www.pcbway.com/project/shareproject/Nevma__Gesture_control_for_the_masses.html)
 * [Mini SS Micro ATMEGA32U4](https://www.aliexpress.com/item/New-Arrival-Mini-SS-Micro-ATMEGA32U4-Pro-Micro-Module-Board-Compatible-For-Arduino/32777411276.html)
 * [APDS-9960 module](https://www.aliexpress.com/item/GY-9960LLC-APDS-9960-RGB-and-Gesture-Sensor-Module-I2C-Breakout-for-Arduino/32746930049.html)
 
