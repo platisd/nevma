@@ -1,6 +1,8 @@
 # Nevma
 A USB gadget to transform your gestures to keyboard and mouse events.
 
+![nevma](https://i.imgur.com/ERky5xN.jpg)
+
 ## Overview
 Nevma (means "gesture" in Greek) is a simple to build, program and use device that translates your hand gestures into keyboard and mouse input. Just plug it in your USB port and magically wave through your presentations, documents, pictures, songs and the like.
 
