@@ -1,4 +1,5 @@
 #include <Keyboard.h>
+#include <Mouse.h>
 #include <SparkFun_APDS9960.h>
 
 SparkFun_APDS9960 gestureSensor;
@@ -13,19 +14,19 @@ void handleGesture() {
   if (gestureSensor.isGestureAvailable()) {
     switch (gestureSensor.readGesture()) {
       case DIR_UP:
-        Keyboard.press(KEY_RIGHT_ARROW);
-        break;
-      case DIR_DOWN:
         Keyboard.press(KEY_LEFT_ARROW);
         break;
+      case DIR_DOWN:
+        Keyboard.press(KEY_RIGHT_ARROW);
+        break;
       case DIR_LEFT:
-        Keyboard.press(KEY_UP_ARROW);
+        Mouse.move(0, 0, -10);
         break;
       case DIR_RIGHT:
-        Keyboard.press(KEY_DOWN_ARROW);
+        Mouse.move(0, 0, 10);
         break;
       case DIR_NEAR:
-        Keyboard.press(KEY_RETURN);
+        Keyboard.press(' ');
         break;
       case DIR_FAR:
         Keyboard.press(KEY_ESC);
@@ -54,6 +55,7 @@ boolean initializeGestureSensor() {
 
 void setup() {
   Keyboard.begin();
+  Mouse.begin();
   attachInterrupt(digitalPinToInterrupt(GESTURE_INT_PIN), transmissionReady, FALLING);
   boolean initializationSuccessful = initializeGestureSensor();
   // If ADPS sensor failed to initialize, block and send error messages via Serial
