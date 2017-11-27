@@ -18,4 +18,4 @@ Nevma can by default recognize a plethora of gestures; swipe left, right, up, do
 * [APDS-9960 module](https://www.aliexpress.com/item/GY-9960LLC-APDS-9960-RGB-and-Gesture-Sensor-Module-I2C-Breakout-for-Arduino/32746930049.html)
 
 ## Media
-*  [Nevma: Gesture control for the masses](https://platis.solutions/blog/2017/11/26/nevma-gesture-control-for-the-masses)
+*  [Nevma: Gesture control for the masses](https://platis.solutions/blog/2017/11/27/nevma-gesture-control-for-the-masses/)
